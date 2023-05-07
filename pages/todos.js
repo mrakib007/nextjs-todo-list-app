@@ -1,6 +1,7 @@
 import React from 'react';
 
 const todos = () => {
+    const todos = [];
     return (
         <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
@@ -9,13 +10,14 @@ const todos = () => {
       <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Your Todos Will Show Up Here.</p>
     </div>
     <div className="flex flex-wrap -m-4">
-      <div className="p-4 lg:w-1/4 md:w-1/2">
+
+        {todos.map(item =>{
+        return <div key={item.title} className="p-4 lg:w-1/4 md:w-1/2">
         <div className="h-full flex flex-col items-center text-center">
           <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://picsum.photos/2001/3000"/>
           <div className="w-full">
-            <h2 className="title-font font-medium text-lg text-gray-900">Alper Kamu</h2>
-            <h3 className="text-gray-500 mb-3">UI Developer</h3>
-            <p className="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+            <h2 className="title-font font-medium text-lg text-gray-900">{item.title}</h2>
+            <p className="mb-4">{item.desc}</p>
             <span className="inline-flex">
               <a className="text-gray-500">
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
@@ -36,6 +38,8 @@ const todos = () => {
           </div>
         </div>
       </div>
+
+      })}
     </div>
   </div>
 </section>
