@@ -22,12 +22,12 @@ const Todos = () => {
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="text-2xl font-medium title-font mb-4 text-gray-900">
+          <h1 className="text-4xl font-medium title-font mb-4 text-gray-900">
             Your Todos
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Your Todos Will Show Up Here.
-          </p>
+          {todos.length == 0 && <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            Your Todos Will Show Up Here. Please Add a Todo By Going To the Homepage.
+          </p>}
         </div>
         <div className="flex flex-wrap -m-4">
           {todos.map((item) => {
@@ -63,7 +63,7 @@ const Todos = () => {
                       </a>
                       <a
                         className="ml-2 text-gray-500 cursor-pointer"
-                        onClick={editTodo}
+                        href={`edit/${item.title}`}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
